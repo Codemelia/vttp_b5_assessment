@@ -16,26 +16,27 @@ public class Main {
         String inputFile = "task01/day.csv";
         String input;
 
-        Map<String, Integer> headers = new HashMap<>();
         Map<String, BikeEntry> map = new HashMap<>();
 
         try (BufferedReader br = new BufferedReader(new FileReader(inputFile))) {
             while((input = br.readLine()) != null) {
-
                 String[] lines = input.split(",");
                 BikeEntry bikeEntry = BikeEntry.toBikeEntry(lines);
-
-                map.put("weekday", bikeEntry);
+                
+                map.put(br.readLine(), bikeEntry);
 
             }
 
             // Find top 5 days with most cyclists
             for (Map.Entry<String, BikeEntry> entry : map.entrySet()) {
                 BikeEntry bikeEntry = entry.getValue();
-                if ("weekday".equals(bikeEntry.getWeekday())) {
-                    
+                if (entry.getKey().equals("weekday")) {
+                    map.put("weekday", bikeEntry);
                 }
             }
+
+            // Print - put in values
+            System.out.println("The <position> recorded number of cyclist was in <season>, on a <day> in the month of <month>. There were a total of <total> cyclists. The weather was <weather. <day> was <holiday>.");
             
         }
     }

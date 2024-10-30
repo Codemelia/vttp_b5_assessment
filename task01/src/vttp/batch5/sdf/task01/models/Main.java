@@ -1,4 +1,4 @@
-package vttp.batch5.sdf.task01;
+package vttp.batch5.sdf.task01.models;
 
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
@@ -7,9 +7,9 @@ import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 
-import vttp.batch5.sdf.task01.models.BikeEntry;
-
 public class Main {
+
+    BikeEntry bikeEntry = new BikeEntry();
     
     public static void main (String[] args) throws FileNotFoundException, IOException {
         // init

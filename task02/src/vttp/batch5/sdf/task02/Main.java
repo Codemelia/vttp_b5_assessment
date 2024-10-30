@@ -34,12 +34,10 @@ public class Main {
 		gameBoard.printBoard();
 
 		System.out.println("----------------------");
-
-		int[] bestMove = opt.getMove(gameBoard);
-		for (int row = 0; row < 3; row++) {
-			for (int col = 0; col <3; col++) {
-				System.out.println("y=" + bestMove[0] + ", x=" + bestMove[1] + ", utility=" + bestMove[2]); 
-			}
+		
+		if (!gameBoard.isFull()) {
+			int[] bestMove = opt.getMove(gameBoard);
+			System.out.println("y=" + bestMove[0] + ", x=" + bestMove[1] + ", utility=" + bestMove[2]); 
 		}
 
 	}
